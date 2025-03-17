@@ -7,7 +7,7 @@ Together, we'll use asynchronous programming to create a game that looks like a 
 
 # Part I: Rock, Paper, Scissors
 ___
-![[rock-paper-scissors-graphic.png]]
+![[rock-paper-scissors-graphic.png]
 
 
 For this part, we'll be designing several systems that work together to simulate the game of rock, paper, scissors. 
