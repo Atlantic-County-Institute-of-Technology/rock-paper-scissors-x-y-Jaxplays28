@@ -1,3 +1,10 @@
+.centered {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+  }
+
+
 *{
     padding: 0;
     margin: 0;
@@ -5,7 +12,7 @@
     background: #082c6c;
     color: #fff;
 }
-/* To center everything in game */
+
 .game{
     display: flex;
     flex-direction: column;
@@ -15,7 +22,7 @@
     align-items: center;
 }
 
-/* Title of the game */
+
 .title{
     position: absolute;
     top: 0;
@@ -23,7 +30,7 @@
     z-index: 2;
 }
 
-/* Score Board */
+
 .score{
     display: flex;
     width: 30vw;
@@ -33,14 +40,14 @@
     z-index: 1;
 }
 
-/* Score  */
+
 .p-count,.c-count{
     text-align: center;
     font-size: 1.5rem;
     margin-top: 1rem;
 }
 
-/* displaying three buttons in one line */
+
 .options{
     display: flex;
     width: 50vw;
@@ -48,7 +55,7 @@
     margin-top: 2rem;
 }
 
-/* Styling on all three buttons */
+
 .rock, .paper, .scissor{
     padding: 0.8rem;
     width: 100px;
@@ -65,7 +72,6 @@
     font-weight: bold;
 }
 
-/* Reload button style */
 .reload {
     display: none;
     margin-top: 2rem;
@@ -82,7 +88,7 @@
     font-size: 1.2rem;
 }
 
-/* Responsive Design */
+
 @media screen and (max-width: 612px)
 {  
     .title{
@@ -96,3 +102,4 @@
     .options{
         width: 100vw;
     }
+}
