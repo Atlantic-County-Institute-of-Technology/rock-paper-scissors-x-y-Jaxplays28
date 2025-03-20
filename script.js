@@ -7,22 +7,27 @@ const game = () => {
         const rockBtn = document.querySelector('.rock');
         const paperBtn = document.querySelector('.paper');
         const scissorBtn = document.querySelector('.scissor');
-        const playerOptions = [rockBtn, paperBtn, scissorBtn];
-        const computerOptions = ['rock', 'paper', 'scissors']
+        const dwightBtn = document.querySelector('.stapler');
+        const yogaballBtn = document.querySelector('.staple_remover');
+        const playerOptions = [rockBtn, paperBtn, scissorBtn, staplerBtn, staple_removerBtn];
+        const computerOptions = ['rock', 'paper', 'scissors', 'stapler', 'staple_remover']
 
+        // Function to start playing game
         playerOptions.forEach(option => {
             option.addEventListener('click', function () {
 
                 const movesLeft = document.querySelector('.movesleft');
                 moves++;
-                movesLeft.innerText = `Moves Left: ${10 - moves}`;
+                movesLeft.innerText = `Moves Left: ${15 - moves}`;
 
 
-                const choiceNumber = Math.floor(Math.random() * 3);
+                const choiceNumber = Math.floor(Math.random() * 5);
                 const computerChoice = computerOptions[choiceNumber];
 
+                // Function to check who wins
                 winner(this.innerText, computerChoice)
 
+                // Calling gameOver function after 10 moves
                 if (moves == 10) {
                     gameOver(playerOptions, movesLeft);
                 }
@@ -31,52 +36,6 @@ const game = () => {
 
     }
 
-    const winner = (player, computer) => {
-        const result = document.querySelector('.result');
-        const playerScoreBoard = document.querySelector('.p-count');
-        const computerScoreBoard = document.querySelector('.c-count');
-        player = player.toLowerCase();
-        computer = computer.toLowerCase();
-        if (player === computer) {
-            result.textContent = 'Tie'
-        }
-        else if (player == 'rock') {
-            if (computer == 'paper') {
-                result.textContent = 'Computer Won';
-                computerScore++;
-                computerScoreBoard.textContent = computerScore;
-
-            } else {
-                result.textContent = 'Player Won'
-                playerScore++;
-                playerScoreBoard.textContent = playerScore;
-            }
-        }
-        else if (player == 'scissors') {
-            if (computer == 'rock') {
-                result.textContent = 'Computer Won';
-                computerScore++;
-                computerScoreBoard.textContent = computerScore;
-            } else {
-                result.textContent = 'Player Won';
-                playerScore++;
-                playerScoreBoard.textContent = playerScore;
-            }
-        }
-        else if (player == 'paper') {
-            if (computer == 'scissors') {
-                result.textContent = 'Computer Won';
-                computerScore++;
-                computerScoreBoard.textContent = computerScore;
-            } else {
-                result.textContent = 'Player Won';
-                playerScore++;
-                playerScoreBoard.textContent = playerScore;
-            }
-        }
-    }
-
-    // Function to run when game is over
     const gameOver = (playerOptions, movesLeft) => {
 
         const chooseMove = document.querySelector('.move');
@@ -112,12 +71,120 @@ const game = () => {
             window.location.reload();
         })
     }
-
-
-    // Calling playGame function inside game
-    playGame();
-
 }
 
-// Calling the game function
+playgame()
+
 game();
+
+const winner = (player, computer) => {
+    const result = document.querySelector('.result');
+    const playerScoreBoard = document.querySelector('.p-count');
+    const computerScoreBoard = document.querySelector('.c-count');
+    player = player.toLowerCase();
+    computer = computer.toLowerCase();
+    if (player === computer) {
+        result.textContent = 'Tie'
+    }
+    else if (player == 'rock') {
+        if (computer == 'paper') {
+            result.textContent = 'Computer Won';
+            computerScore++;
+            computerScoreBoard.textContent = computerScore;
+
+        } else {
+            result.textContent = 'Player Won'
+            playerScore++;
+            playerScoreBoard.textContent = playerScore;
+        }
+    }
+    else if (player == 'scissors') {
+        if (computer == 'rock') {
+            result.textContent = 'Computer Won';
+            computerScore++;
+            computerScoreBoard.textContent = computerScore;
+        } else {
+            result.textContent = 'Player Won';
+            playerScore++;
+            playerScoreBoard.textContent = playerScore;
+        }
+    }
+    else if (player == 'paper') {
+        if (computer == 'scissors') {
+            result.textContent = 'Computer Won';
+            computerScore++;
+            computerScoreBoard.textContent = computerScore;
+        } else {
+            result.textContent = 'Player Won';
+            playerScore++;
+            playerScoreBoard.textContent = playerScore;
+        }
+    }
+    else if (player == 'stapler') {
+        if (computer == 'staple_remover') {
+            result.textContent = 'Computer Won';
+            computerScore++;
+            computerScoreBoard.textContent = computerScore;
+        } else {
+            result.textContent = 'Player Won';
+            playerScore++;
+            playerScoreBoard.textContent = playerScore;
+        }
+    }
+    else if (player == 'paper') {
+        if (computer == 'stapler') {
+            result.textContent = 'Computer Won';
+            computerScore++;
+            computerScoreBoard.textContent = computerScore;
+        } else {
+            result.textContent = 'Player Won';
+            playerScore++;
+            playerScoreBoard.textContent = playerScore;
+        }
+    }
+    else if (player == 'stapler') {
+        if (computer == 'rock') {
+            result.textContent = 'Computer Won';
+            computerScore++;
+            computerScoreBoard.textContent = computerScore;
+        } else {
+            result.textContent = 'Player Won';
+            playerScore++;
+            playerScoreBoard.textContent = playerScore;
+        }
+    }
+    else if (player == 'staple_remover') {
+        if (computer == 'rock') {
+            result.textContent = 'Computer Won';
+            computerScore++;
+            computerScoreBoard.textContent = computerScore;
+        } else {
+            result.textContent = 'Player Won';
+            playerScore++;
+            playerScoreBoard.textContent = playerScore;
+        }
+    }
+    else if (player == 'scissors') {
+        if (computer == 'stapler') {
+            result.textContent = 'Computer Won';
+            computerScore++;
+            computerScoreBoard.textContent = computerScore;
+        } else {
+            result.textContent = 'Player Won';
+            playerScore++;
+            playerScoreBoard.textContent = playerScore;
+        }
+    }
+    else if (player == 'scissors') {
+        if (computer == 'staple_remover') {
+            result.textContent = 'Computer Won';
+            computerScore++;
+            computerScoreBoard.textContent = computerScore;
+        } else {
+            result.textContent = 'Player Won';
+            playerScore++;
+            playerScoreBoard.textContent = playerScore;
+        }
+    }
+    
+    }
