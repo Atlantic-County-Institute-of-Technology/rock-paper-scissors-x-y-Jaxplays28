@@ -3,7 +3,7 @@ const game = () => {
     let computerScore = 0;
     let moves = 0;
 
-    const playGame = () => {
+  function playGame() {
         const rockBtn = document.querySelector('.rock');
         const paperBtn = document.querySelector('.paper');
         const scissorBtn = document.querySelector('.scissor');
@@ -35,8 +35,7 @@ const game = () => {
         })
 
     }
-
-    const gameOver = (playerOptions, movesLeft) => {
+function gameOver(playerOptions, movesLeft) {
 
         const chooseMove = document.querySelector('.move');
         const result = document.querySelector('.result');
