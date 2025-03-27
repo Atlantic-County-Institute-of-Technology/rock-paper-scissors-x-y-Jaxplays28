@@ -1,16 +1,31 @@
+const rockBtn = document.querySelector('.rock');
+const paperBtn = document.querySelector('.paper');
+const scissorBtn = document.querySelector('.scissor');
+const staplerBtn = document.querySelector('.stapler');
+const staple_removerBtn = document.querySelector('.staple_remover');
+const playerOptions = [rockBtn, paperBtn, scissorBtn, staplerBtn, staple_removerBtn];
+const computerOptions = ['rock', 'paper', 'scissors', 'stapler', 'staple_remover']
+
+
+
+const chooseMove = document.querySelector('.move');
+const result = document.querySelector('.result');
+const reloadBtn = document.querySelector('.reload');
+
+reloadBtn.innerText = 'Restart';
+reloadBtn.style.display = 'flex';
+reloadBtn.addEventListener('click', () => {
+    console.log("reload")
+    window.location.reload();
+})
+
 let playerScore = 0;
 let computerScore = 0;
 let moves = 0;
 const game = () => {
 }
   function playGame() {
-        const rockBtn = document.querySelector('.rock');
-        const paperBtn = document.querySelector('.paper');
-        const scissorBtn = document.querySelector('.scissor');
-        const staplerBtn = document.querySelector('.stapler');
-        const staple_removerBtn = document.querySelector('.staple_remover');
-        const playerOptions = [rockBtn, paperBtn, scissorBtn, staplerBtn, staple_removerBtn];
-        const computerOptions = ['rock', 'paper', 'scissors', 'stapler', 'staple_remover']
+    
 
         // Function to start playing game
         playerOptions.forEach(option => {
@@ -29,7 +44,7 @@ const game = () => {
 
                 // Calling gameOver function after 15 moves
                 if (moves == 15) {
-                    gameOver(playerOptions, movesLeft);
+                    gameOver(playerOptions, movesLeft) ;
                 }
             })
         })
@@ -37,9 +52,6 @@ const game = () => {
     }
 function gameOver(playerOptions, movesLeft) {
 
-        const chooseMove = document.querySelector('.move');
-        const result = document.querySelector('.result');
-        const reloadBtn = document.querySelector('.reload');
 
         playerOptions.forEach(option => {
             option.style.display = 'none';
@@ -64,11 +76,7 @@ function gameOver(playerOptions, movesLeft) {
             result.innerText = 'Tie';
             result.style.color = 'grey'
         }
-        reloadBtn.innerText = 'Restart';
-        reloadBtn.style.display = 'flex'
-        reloadBtn.addEventListener('click', () => {
-            window.location.reload();
-        })
+        
     }
 
 

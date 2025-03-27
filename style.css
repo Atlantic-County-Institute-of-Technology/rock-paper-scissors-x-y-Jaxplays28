@@ -55,10 +55,9 @@
     font-weight: bold;
 }
 .reload {
-    display: none;
     margin-top: 2rem;
     padding: 1rem;
-    background: rgb(206, 24, 24);
+    background: rgb(39, 206, 24);
     outline: none;
     border: none;
     border-radius: 10px;
